@@ -1,17 +1,23 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"hci/api"
 )
 
+const configFile = "./config.json"
+
+var conf Config
+
 func main() {
-	r := gin.Default()
+	err := readConfig(configFile, &conf)
+	if err != nil {
+		panic(err)
+	}
 
-	r.GET("/status", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"status": "100% healthy",
-		})
-	})
+	server := api.NewServer(conf.PORT)
 
-	r.Run(":4000")
+	err = server.Start()
+	if err != nil {
+		panic(err)
+	}
 }
