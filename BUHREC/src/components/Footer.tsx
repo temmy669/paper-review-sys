@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
       <div className="flex flex-col-reverse font-Buhrec font-bold text-darkBlue text-lg">
         BUHREC
       </div>
-      <div className="">
+      <div>
         <ul className="list-none font-Montserrat">
           <li className="mb-5 cursor-pointer">Home</li>
           <li className="mb-5 cursor-pointer">About</li>

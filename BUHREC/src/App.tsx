@@ -1,6 +1,7 @@
-import Client from "./Layout/Client";
+import { Client } from "./Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, About } from "./pages/index";
+import { Home, About, Login } from "./pages/index";
+import { ProtectedRoute } from "./components";
 
 const router = createBrowserRouter([
   {
@@ -8,9 +9,31 @@ const router = createBrowserRouter([
     element: <Client />,
     errorElement: "",
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/about", element: <About /> },
+      {
+        path: "/",
+        element: (
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/about",
+        element: (
+          <ProtectedRoute>
+            <About />
+          </ProtectedRoute>
+        ),
+      },
+      // { path: "/about", element: <About /> },
+      // { path: "/about", element: <About /> },
+      // { path: "/about", element: <About /> },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+    errorElement: "",
   },
 ]);
 

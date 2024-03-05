@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Footer, Nav } from "../components";
-const Client = () => {
+const Client: React.FC = () => {
   return (
     <>
       <Nav />

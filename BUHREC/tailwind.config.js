@@ -9,6 +9,8 @@ export default {
         button: "#045286",
         landing: "#EFEFFB",
         lightButton: "#C2DEF1",
+        link: "#39A3EB",
+        ash: "#7D76768C",
       },
       fontFamily: {
         Buhrec: ["Racing Sans One"],

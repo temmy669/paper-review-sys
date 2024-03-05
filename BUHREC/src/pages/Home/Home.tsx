@@ -1,8 +1,9 @@
 import { LandingPage } from "../../assets";
-import { Button } from "../../components";
+import { CallToAction } from "../../components";
+
 import HomeCard, { HomeCardProps } from "./HomeCard";
 
-const Home = () => {
+const Home: React.FC = () => {
   const homecards: HomeCardProps[] = [
     {
       heading: "Streamlined Proposal Submission",
@@ -20,7 +21,7 @@ const Home = () => {
   return (
     <>
       <div className="relative">
-        <img src={LandingPage} alt="" />
+        <img src={LandingPage} alt="landingPage" />
         <div className="absolute -translate-y-56 translate-x-16 text-5xl text-landing font-Montserrat font-bold leading-snug">
           <h1>Welcome to</h1> <h1> BUHREC</h1>
         </div>
@@ -31,34 +32,25 @@ const Home = () => {
         </h2>
       </div>
       <div className="flex flex-col gap-32 pb-20">
-        {homecards.map(({ img, text, heading, isReversed }) => (
+        {homecards.map(({ img, text, heading, isReversed }, index) => (
           <HomeCard
             heading={heading}
             img={img}
+            key={index}
             text={text}
             isReversed={isReversed}
           />
         ))}
       </div>
-      <div className="px-20 text-white pb-20">
-        <div className="bg-darkBlue flex flex-col justify-center items-center w-full py-24 rounded-md">
-          <div className="flex flex-col justify-center items-center leading-7 font-semibold text-2xl">
-            <p>Your Path to Exclusive and</p>
-            <p>Accurate Research Begins Here!</p>
-          </div>
-
-          <div className="pt-14">
-            <Button name="Work with us" isLight={true} />
-          </div>
-        </div>
-      </div>
+      <CallToAction />
       <div className="flex flex-col gap-32 pb-24">
-        {homecards.map(({ img, text, heading, isReversed }) => (
+        {homecards.map(({ img, text, heading, isReversed }, index) => (
           <HomeCard
             heading={heading}
             img={img}
             text={text}
             isReversed={isReversed}
+            key={index}
           />
         ))}
       </div>

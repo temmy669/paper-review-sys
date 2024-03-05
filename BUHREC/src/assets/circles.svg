@@ -1,0 +1,19 @@
+<svg width="755" height="1801" viewBox="0 0 755 1801" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="mask0_140_364" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+        width="755" height="1801">
+        <path
+            d="M755 0H51.2C33.2783 0 24.3175 0 17.4723 3.48779C11.4511 6.55574 6.55573 11.4511 3.48779 17.4723C0 24.3175 0 33.2783 0 51.2V1749.8C0 1767.72 0 1776.68 3.48779 1783.53C6.55573 1789.55 11.4511 1794.44 17.4723 1797.51C24.3175 1801 33.2783 1801 51.2 1801H755V0Z"
+            fill="#ABC8FF" />
+    </mask>
+    <g mask="url(#mask0_140_364)">
+        <ellipse cx="645.381" cy="1441.46" rx="371.632" ry="482.148"
+            transform="rotate(19.1757 645.381 1441.46)" fill="#073794" fill-opacity="0.12" />
+        <ellipse cx="645.381" cy="1441.46" rx="371.632" ry="482.148"
+            transform="rotate(19.1757 645.381 1441.46)" fill="#073794" fill-opacity="0.12" />
+        <ellipse cx="505.381" cy="1401.46" rx="371.632" ry="482.148"
+            transform="rotate(19.1757 505.381 1401.46)" fill="#073794" fill-opacity="0.12" />
+        <ellipse cx="428.526" cy="1836.74" rx="371.632" ry="482.148"
+            transform="rotate(-37.9382 428.526 1836.74)" fill="#405AE1" fill-opacity="0.21" />
+    </g>
+</svg>
+    
