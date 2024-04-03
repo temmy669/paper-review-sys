@@ -24,7 +24,12 @@ func main() {
 		panic(err)
 	}
 
-	server := api.NewServer(conf.PORT)
+	db, err := dbOps.ConnectDB()
+	if err != nil {
+		panic(err)
+	}
+
+	server := api.NewServer(conf.PORT, db)
 
 	err = server.Start()
 	if err != nil {

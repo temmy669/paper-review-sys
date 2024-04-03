@@ -1,6 +1,8 @@
 package util
 
 import (
+	"log"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -13,9 +15,10 @@ func JsonResp(c *gin.Context, code int, body any) {
 }
 
 func ErrResp(c *gin.Context, code int, err error) {
+	log.Println(err)
 	c.JSON(code, gin.H{
 		"data":    nil,
 		"success": false,
-		"err":     err,
+		"err":     err.Error(),
 	})
 }
