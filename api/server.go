@@ -3,12 +3,15 @@ package api
 import (
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
+
+	"hci/token"
 )
 
 type Server struct {
-	DB     *gorm.DB
-	PORT   string
-	router *gin.Engine
+	DB         *gorm.DB
+	PORT       string
+	router     *gin.Engine
+	TokenMaker *token.TokenGen
 }
 
 func (s *Server) setUpRouter() {
@@ -18,6 +21,7 @@ func (s *Server) setUpRouter() {
 
 	// user mgmt
 	r.POST("/users", s.createUser)
+	r.POST("/users/login", s.loginUser)
 
 	s.router = r
 }
@@ -29,9 +33,12 @@ func (s *Server) Start() error {
 }
 
 func NewServer(port string, db *gorm.DB) *Server {
+	tg := &token.TokenGen{}
+
 	server := &Server{
-		PORT: port,
-		DB:   db,
+		PORT:       port,
+		DB:         db,
+		TokenMaker: tg,
 	}
 
 	server.setUpRouter()
