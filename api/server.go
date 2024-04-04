@@ -27,6 +27,12 @@ func (s *Server) setUpRouter() {
 	r.POST("/reviewers", s.createReviewer)
 	r.POST("/reviewers/login", s.loginReviewer)
 
+	// authenticated routes
+	authRoutes := r.Group("/").Use(authMiddleware(*s.TokenMaker))
+	authRoutes.POST("/users/proposal")
+
+	authRoutes.GET("/reviewers/proposal")
+
 	s.router = r
 }
 
