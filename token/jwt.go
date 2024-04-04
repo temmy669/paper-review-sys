@@ -11,8 +11,8 @@ const jwtSecret = "rer89o23r9fh"
 
 type TokenGen struct{}
 
-func (tg *TokenGen) CreateToken(email string, duration time.Duration) (string, error) {
-	payload, err := NewPayload(email, duration)
+func (tg *TokenGen) CreateToken(email, userType string, duration time.Duration) (string, error) {
+	payload, err := NewPayload(email, userType, duration)
 	if err != nil {
 		return "", err
 	}

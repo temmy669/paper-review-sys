@@ -87,7 +87,7 @@ func (s *Server) loginUser(ctx *gin.Context) {
 		return
 	}
 
-	accessToken, err := s.TokenMaker.CreateToken(req.Email, time.Duration(2*3600*time.Second))
+	accessToken, err := s.TokenMaker.CreateToken(req.Email, "U", time.Duration(2*3600*time.Second))
 	if err != nil {
 		util.ErrResp(ctx, http.StatusInternalServerError, err)
 		return

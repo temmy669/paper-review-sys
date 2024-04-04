@@ -23,6 +23,10 @@ func (s *Server) setUpRouter() {
 	r.POST("/users", s.createUser)
 	r.POST("/users/login", s.loginUser)
 
+	// reviwer mgmt
+	r.POST("/reviewers", s.createReviewer)
+	r.POST("/reviewers/login", s.loginReviewer)
+
 	s.router = r
 }
 
