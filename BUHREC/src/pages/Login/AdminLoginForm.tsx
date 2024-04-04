@@ -1,17 +1,9 @@
-import { Form, Link, useNavigate } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 import { Button } from "../../components";
 import useAuth from "../../utils/hooks/useAuth";
 
-const LoginForm = () => {
+const AdminLoginForm: React.FC = () => {
   const { login } = useAuth();
-  const navigate = useNavigate();
-
-  const handleSubmit = () => {
-    login();
-    setTimeout(() => {
-      navigate("/DashBoard/Upload");
-    }, 1000);
-  };
   return (
     <Form
       method="post"
@@ -29,6 +21,21 @@ const LoginForm = () => {
         />
       </div>
       <div className="flex flex-col gap-2">
+        <label htmlFor="Admin">Admin Type</label>
+        <select
+          name="Admin"
+          id="Admin"
+          className="w-3/4 px-3 block py-2 border-ash rounded-lg border"
+        >
+          <option value="" selected hidden className="">
+            Select Admin Type
+          </option>
+          <option value="">Chief Admin</option>
+          <option value="">Assistant Admin</option>
+          <option value="">Authorised Staff</option>
+        </select>
+      </div>
+      <div className="flex flex-col gap-2">
         <label htmlFor="Password">Password</label>
         <input
           type="password"
@@ -43,16 +50,12 @@ const LoginForm = () => {
       </div>
 
       <div className="flex gap-44">
-        <Link to="/" onClick={handleSubmit}>
+        <Link to="/" onClick={login}>
           <Button isAbsolute={false} isLight={false} name="Login" />
-        </Link>
-
-        <Link to="/">
-          <p className="text-link">Login as Reviewer</p>
         </Link>
       </div>
     </Form>
   );
 };
 
-export default LoginForm;
+export default AdminLoginForm;

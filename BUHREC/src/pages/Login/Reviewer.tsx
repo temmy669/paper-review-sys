@@ -1,9 +1,9 @@
 import LoginForm from "./LoginForm";
 import { AuthLayout } from "../../Layout";
-import RegisterForm from "./RegisterForm";
+import RegisterFormForResearcher from "./RegisterFormForResearcher";
 import useToggle from "../../utils/hooks/useToggle";
 
-const Login: React.FC = () => {
+const Reviewer: React.FC = () => {
   const { toggle, setToLogin, setToRegister } = useToggle();
 
   return (
@@ -38,10 +38,10 @@ const Login: React.FC = () => {
             ></span>
           </div>
         </div>
-        {toggle ? <LoginForm /> : <RegisterForm />}
+        {toggle ? <LoginForm /> : <RegisterFormForResearcher />}
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Reviewer;

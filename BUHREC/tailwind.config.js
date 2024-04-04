@@ -10,6 +10,8 @@ export default {
         landing: "#EFEFFB",
         lightButton: "#C2DEF1",
         link: "#39A3EB",
+        welcome: "#0B49C2",
+        upload: "#DEE7F5",
         ash: "#7D76768C",
       },
       fontFamily: {

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Slide, { slideProps } from "./Slide";
 
 export interface SliderProps {
@@ -13,18 +13,18 @@ const Slider: React.FC<SliderProps> = ({ slides }) => {
     const scrollPosition = sliderRef.current.clientWidth * index;
     sliderRef.current.scrollTo({ behavior: "smooth", left: scrollPosition });
   };
-  //   const index = currentSlide;
-  //   useEffect(() => {
-  //     setInterval(() => {
-  //       setCurrentSlide(index);
-  //       //   if (currentSlide == slides.length - 1) {
-  //       //     setCurrentSlide(0);
-  //       const scrollPosition = sliderRef.current.clientWidth * index;
-  //       sliderRef.current.scrollTo({ behavior: "smooth", left: scrollPosition });
-  //       index + 1;
-  //       //   }
-  //     }, 3000);
-  //   }, [currentSlide]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const nextSlideIndex =
+        currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+      setCurrentSlide(nextSlideIndex);
+      const scrollPosition = sliderRef.current.clientWidth * nextSlideIndex;
+      sliderRef.current.scrollTo({ behavior: "smooth", left: scrollPosition });
+    }, 2000); // Change slide every 5 seconds
+
+    return () => clearInterval(intervalId);
+  }, [currentSlide, slides.length]);
 
   return (
     <div className="slider pt-14">

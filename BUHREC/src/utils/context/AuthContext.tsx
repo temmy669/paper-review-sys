@@ -11,9 +11,11 @@ export const AuthContext = createContext<AuthContextProps | undefined>(
 
 export const AuthProvider = ({ children }) => {
   const [authenticated, setAuthenticated] = useState<boolean>(true);
+  // const navigate = useNavigate();
 
   const login = () => {
     setAuthenticated(true);
+    // navigate("/DashBoard/Upload");
   };
 
   const logout = () => {

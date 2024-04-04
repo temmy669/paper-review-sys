@@ -1,4 +1,4 @@
-import { LandingPage } from "../../assets";
+import { card4, LandingPage, card5 } from "../../assets";
 import { CallToAction } from "../../components";
 
 import HomeCard, { HomeCardProps } from "./HomeCard";
@@ -8,20 +8,21 @@ const Home: React.FC = () => {
     {
       heading: "Streamlined Proposal Submission",
       text: "Our platform simplifies research proposal submissions with a user-friendly interface. It streamlines the process by organizing information, providing real-time feedback, and ensuring submissions meet all criteria, allowing researchers to focus on the quality of their proposals.",
-      img: LandingPage,
+      img: card4,
       isReversed: false,
     },
     {
       heading: "Streamlined Proposal Submission",
       text: "Our platform simplifies research proposal submissions with a user-friendly interface. It streamlines the process by organizing information, providing real-time feedback, and ensuring submissions meet all criteria, allowing researchers to focus on the quality of their proposals.",
-      img: LandingPage,
+      img: card5,
       isReversed: true,
     },
   ];
   return (
     <>
-      <div className="relative">
-        <img src={LandingPage} alt="landingPage" />
+      <div className="relative  ">
+        <img src={LandingPage} alt="card4" className="" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#0000FF99] to-[#d5d5e899] opacity-60 "></div>
         <div className="absolute -translate-y-56 translate-x-16 text-5xl text-landing font-Montserrat font-bold leading-snug">
           <h1>Welcome to</h1> <h1> BUHREC</h1>
         </div>

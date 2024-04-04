@@ -10,11 +10,11 @@ const About: React.FC = () => {
       body: "Our mission is to enhance and uphold the quality of researches emanating from Babcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inadebcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inademic inquiry and innovation, contributing significantly to the global academic community.",
     },
     {
-      heading: "HOW WE dIF",
+      heading: "OUR GOALS",
       body: "Our mission is to enhance and uphold the quality of researches emanating from Babcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inadebcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inademic inquiry and innovation, contributing significantly to the global academic community.",
     },
     {
-      heading: "HOWDFA",
+      heading: "VALUES",
       body: "Our mission is to enhance and uphold the quality of researches emanating from Babcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inadebcock University, ensuring they meet the utmost standards. We are dedicated to fostering an environment of excellence inademic inquiry and innovation, contributing significantly to the global academic community.",
     },
   ];
@@ -27,6 +27,7 @@ const About: React.FC = () => {
   return (
     <div className="relative">
       <img src={LandingPage} alt="landingPage" />
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#0000FF99] to-[#5858dd99] opacity-60 "></div>
       <div className="absolute -translate-y-56 translate-x-16 text-5xl text-landing font-Montserrat font-bold leading-snug">
         <h1>ABOUT US</h1>
       </div>

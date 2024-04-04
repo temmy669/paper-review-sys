@@ -1,39 +1,100 @@
-import { Client } from "./Layout";
+import { Client, DashBoardLayout } from "./Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home, About, Login } from "./pages/index";
+import {
+  Home,
+  About,
+  Login,
+  AdminLogin,
+  Reviewer,
+  Submit,
+  ErrorPage,
+  Upload,
+  PendingSubmissions,
+  PastSubmissions,
+} from "./pages/index";
 import { ProtectedRoute } from "./components";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Client />,
-    errorElement: "",
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
         element: (
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <Home />
+          // </ProtectedRoute>
         ),
       },
       {
         path: "/about",
         element: (
+          // <ProtectedRoute>
+          <About />
+          // </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/Submit",
+        element: (
           <ProtectedRoute>
-            <About />
+            <Submit />
           </ProtectedRoute>
         ),
       },
-      // { path: "/about", element: <About /> },
-      // { path: "/about", element: <About /> },
-      // { path: "/about", element: <About /> },
+      // { path: "/certificate", element: <Certificate /> },
     ],
   },
   {
     path: "/login",
     element: <Login />,
     errorElement: "",
+  },
+  {
+    path: "ReviewerLogin",
+    element: <Reviewer />,
+    errorElement: "",
+  },
+  {
+    path: "AdminLogin",
+    element: <AdminLogin />,
+    errorElement: "",
+  },
+  {
+    path: "/Dashboard",
+    element: <DashBoardLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/Dashboard/Upload",
+        element: (
+          <ProtectedRoute>
+            <Upload />
+          </ProtectedRoute>
+        ),
+        errorElement: "",
+      },
+      {
+        path: "/Dashboard/PastSubmissions",
+        element: (
+          <ProtectedRoute>
+            <PastSubmissions />
+          </ProtectedRoute>
+        ),
+        errorElement: "",
+      },
+      {
+        path: "/Dashboard/Pending",
+        element: (
+          <ProtectedRoute>
+            <PendingSubmissions />
+          </ProtectedRoute>
+        ),
+        errorElement: "",
+      },
+    ],
   },
 ]);
 
