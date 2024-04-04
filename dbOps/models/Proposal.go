@@ -25,5 +25,9 @@ import (
 
 type Proposal struct {
 	gorm.Model
-	file string `gorm:"not null,unique"`
+	UserID     uint   `gorm:"not null"`
+	File       string `gorm:"not null,unique"`
+	ReviewerID uint
+	// DisciplineID uint   `gorm:"not null"`
+	ReviewStatus string `gorm:"not null;default:Pending"`
 }

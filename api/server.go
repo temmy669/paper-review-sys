@@ -17,6 +17,8 @@ type Server struct {
 func (s *Server) setUpRouter() {
 	r := gin.Default()
 
+	r.MaxMultipartMemory = 8 << 20 // 8mb
+
 	r.GET("/status", healthCheck)
 
 	// user mgmt
@@ -29,9 +31,9 @@ func (s *Server) setUpRouter() {
 
 	// authenticated routes
 	authRoutes := r.Group("/").Use(authMiddleware(*s.TokenMaker))
-	authRoutes.POST("/users/proposal")
+	authRoutes.POST("/users/proposal", s.newProp)
 
-	authRoutes.GET("/reviewers/proposal")
+	authRoutes.GET("/reviewers/proposal", s.allProps)
 
 	s.router = r
 }
