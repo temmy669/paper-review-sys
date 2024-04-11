@@ -1,28 +1,34 @@
 import DocumentCard from "./DocumentCard";
 
 interface fileProps {
+  id: string;
   name: string;
   status: boolean;
 }
 
 const files: fileProps[] = [
   {
+    id: "Idenad",
     name: "New File",
     status: true,
   },
   {
+    id: "Idefad",
     name: "New File",
     status: false,
   },
   {
+    id: "Ifgaads",
     name: "New File",
     status: true,
   },
   {
+    id: "Iutynh",
     name: "New File",
     status: true,
   },
   {
+    id: "jfgrfgs",
     name: "New File",
     status: true,
   },

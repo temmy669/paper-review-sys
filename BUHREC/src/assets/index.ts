@@ -20,8 +20,24 @@ import uploadDoc from "./UploadDocument.svg"
 import logoutimg from "./logout.svg";
 import documentSuccesful from "./DocumentSuccessful.svg"
 import close from "./close-svgrepo-com.svg"
+import homeImg from "./Home.svg"
+import emptyProfile from './empltyProfile.svg'
+import employee from './employee.svg'
+import recruitment from './Recruitment.svg'
+import payslips from './payslips.svg'
+import help from './help.svg'
+import lightLogout from './lightLogout.svg'
+import deleteImg from './Delete.svg'
 export{
     documentSuccesful,
+    help,
+    payslips,
+    employee,
+    lightLogout,
+    deleteImg,
+    recruitment,
+    emptyProfile,
+    homeImg,
     Facebook,
     uplaod,
     close,

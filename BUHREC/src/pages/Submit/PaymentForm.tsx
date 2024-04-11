@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Form } from "react-router-dom";
 
 const CARD_NUMBER_REGEX = /^[0-9]{16}$/; // Regex for valid credit card number
 const EXPIRY_DATE_REGEX = /^(0[1-9]|1[0-2])\/\d{2}$/; // Regex for MM/YY format
@@ -65,7 +66,7 @@ const PaymentForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <div className="form-group">
         <label htmlFor="cardNumber">Card Number:</label>
         <input
@@ -117,7 +118,7 @@ const PaymentForm = () => {
         {errors.cvc && <p className="error-message">{errors.cvc}</p>}
       </div>
       <button type="submit">Submit</button>
-    </form>
+    </Form>
   );
 };
 

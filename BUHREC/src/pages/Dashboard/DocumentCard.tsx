@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { documentSuccesful } from "../../assets";
 
 interface fileProps {
+  id: string;
   name: string;
   status: boolean;
 }
@@ -17,7 +19,10 @@ const DocumentCard: React.FC<DocumentCardProps> = ({ file }) => {
   return (
     <div className="flex flex-col items-center gap-3 bg-white w-44 py-4 rounded-lg">
       <p>{file?.name}</p>
-      <img src={documentSuccesful} width={30} alt="" />
+      <Link to={`/Dashboard/PastSubmissions/Description/${file.name}`}>
+        <img src={documentSuccesful} width={30} alt="" />
+      </Link>
+
       {file.status ? (
         <div className="flex items-center flex-col">
           <p className="text-green-500 pb-4">Approved</p>

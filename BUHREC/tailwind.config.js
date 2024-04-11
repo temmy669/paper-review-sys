@@ -17,6 +17,7 @@ export default {
       fontFamily: {
         Buhrec: ["Racing Sans One"],
         Montserrat: ["Montserrat"],
+        Raleway: ["Raleway"],
       },
     },
   },

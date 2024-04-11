@@ -1,4 +1,4 @@
-import { Client, DashBoardLayout } from "./Layout";
+import { Client, DashBoardLayout, ReviewerLayout } from "./Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
   Home,
@@ -11,6 +11,10 @@ import {
   Upload,
   PendingSubmissions,
   PastSubmissions,
+  DocumentDetails,
+  ReviewerPanel,
+  ReviewForm,
+  PreviouslyReviewed,
 } from "./pages/index";
 import { ProtectedRoute } from "./components";
 
@@ -44,9 +48,9 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      // { path: "/certificate", element: <Certificate /> },
     ],
   },
+  { path: "/certificate", element: <ReviewerPanel /> },
   {
     path: "/login",
     element: <Login />,
@@ -93,6 +97,33 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
         errorElement: "",
+      },
+      {
+        path: "/Dashboard/PastSubmissions/Description/:id",
+        element: (
+          <ProtectedRoute>
+            <DocumentDetails />
+          </ProtectedRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/Reviewer",
+    element: <ReviewerLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/Reviewer/",
+        element: <ReviewerPanel />,
+      },
+      {
+        path: "/Reviewer/review/:doc",
+        element: <ReviewForm />,
+      },
+      {
+        path: "/Reviewer/previouslyReviewed",
+        element: <PreviouslyReviewed />,
       },
     ],
   },

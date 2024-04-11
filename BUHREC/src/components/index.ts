@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Button from "./Button";
 import CallToAction from "./CallToAction";
 import ProtectedRoute from "./ProtectedRoute";
+import ReviewButton from "./ReviewButton";
 
 export{
     Footer,
@@ -10,5 +11,5 @@ export{
     Button,
     CallToAction,
     ProtectedRoute,
-
+    ReviewButton
 }

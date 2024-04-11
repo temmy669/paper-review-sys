@@ -2,7 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import { bookOpen, logoutimg, pending, profile, uplaod } from "../assets";
 import useAuth from "../utils/hooks/useAuth";
 
-const DashBoardLayout = () => {
+const DashBoardLayout: React.FC = () => {
   const links: link[] = [
     { name: "Upload", to: "/DashBoard/Upload" },
     { name: "Past Submissions", to: "/DashBoard/PastSubmissions" },
@@ -77,14 +77,11 @@ const DashBoardLayout = () => {
           </div>
         </aside>
         <main className="flex flex-col basis-[85%]">
-          <div className="basis-[20%] text-2xl pl-20 font-semibold flex items-center">
+          <div className="basis-[20%] text-2xl pl-20 pt-9 pb-9 font-semibold flex items-center">
             <span className="text-welcome mr-3">Welcome, </span> Dr. Adetunji
           </div>
 
           <Outlet />
-
-          {/* </div> */}
-          {/* </div> */}
         </main>
       </div>
     </div>
